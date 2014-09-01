@@ -1,0 +1,8 @@
+# For security reasons, Option followsymlinks cannot be overridden.
+#Options +FollowSymlinks
+#Options +SymLinksIfOwnerMatch
+RewriteEngine on
+
+RewriteRule ^inicio$ index.html
+RewriteRule ^asistencia$ asistencia.html
+RewriteRule ^nosotros$ nosotros.html

@@ -1,0 +1,78 @@
+body {
+    padding-top: 50px;
+}
+.navbar-brand {
+    padding: 0px;
+    margin: auto 10px;
+}
+.clear {
+    clear: both;
+}
+.main-text {
+    padding: 0;
+}
+.odd-b {
+	background: #f8f8f8;
+}
+.even-b {
+	background: #e7e7e7;
+}
+.odd-b, .even-b {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.p0 {
+	padding: 0;
+}
+.p0i {
+	padding: 0 !important;
+}
+.welcome-text {
+    position: absolute;
+	bottom: 0;
+	color: rgb(255, 255, 255);
+	font-weight: 400;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	padding: 10px;
+	margin: auto;
+}
+.main-form {
+	
+}
+
+@media (min-width: 0px) and (max-width: 320px) {
+    .main-text {
+        background: url(../images/main-index.jpg) 0px 0px no-repeat;
+        background-size: 100%;
+        height: 480px;
+    }
+}
+@media (min-width: 321px) and (max-width: 480px) {
+    .main-text {
+        background: url(../images/main-index.jpg) 0px 0px no-repeat;
+        background-size: 100%;
+        height: 480px;
+    }
+}
+@media (min-width: 481px) and (max-width: 800px) {
+    .main-text {
+        background: url(../images/main-index.jpg) 0px -120px no-repeat;
+        background-size: 100%;
+        height: 480px;
+    }
+}
+@media (min-width: 801px) and (max-width: 990px) {
+    .main-text {
+        background: url(../images/main-index.jpg) 0px -240px no-repeat;
+        background-size: 100%;
+        height: 720px;
+    }
+}
+@media (min-width: 991px) {
+    .main-text {
+        background: url(../images/main-index.jpg) 0px -140px no-repeat;
+        background-size: 100%;
+        height: 580px;
+    }
+}

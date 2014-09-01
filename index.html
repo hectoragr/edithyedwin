@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="img/png" href="img/favicon.ico">
+	<title>Edith&amp;Edwin</title>
+	<!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-switch.min.css">
+    <link href="css/main.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-default navbar-fixed-top clearfix" role="navigation">
+		  <div class="container-fluid clearfix">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="./">
+		      	<img src="images/logo.png" width="auto" height="50px">
+		      </a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="./">Inicio</a></li>
+		        <li><a href="asistencia">Asistencia</a></li>
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nosotros <span class="caret"></span></a>
+		          <ul class="dropdown-menu" role="menu">
+		            <li><a href="nosotros">Sección 1</a></li>
+		            <li><a href="nosotros#s2">Sección 2</a></li>
+		            <li class="divider"></li>
+		            <li><a href="nosotros#s3">Sección 3</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div>
+		</nav>
+	</header>
+	<div class="container-fluid clearfix">
+		<div class="p0i row odd-b">
+			<div class="col-md-6 col-md-offset-3 main-text">
+				<p class="welcome-text">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>	
+		</div>
+		<div class="row even-b">
+			<div class="col-md-6 col-md-offset-3 main-form">
+				<form id="asistencia" action="include/asistencia" method="POST" class="form-asistencia">
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.
+					</p>
+					<div class="form-group">
+	                  <label for="folio">Folio</label>
+	                  <input type="text" class="form-control" id="folio" name="folio">
+	                  <div class="row text-center visible-xs visible-sm">
+	                  	<button id="buscar" class="btn btn-primary">Buscar</button>
+	                  </div>
+	                </div>
+	                <div class="info-asistente">
+		                <div class="form-group">
+		                  <label for="nombre">Familia</label>
+		                  <input type="text" class="form-control" id="nombre" name="nombre">
+		                </div>
+		                <div class="form-group">
+		                  <label for="confirmar">Asistencia</label>
+		                  <div class="row text-center">
+		                  	<input id="confirmar" type="checkbox" name="confirmar" checked>
+		                  </div>
+		                </div>
+		                <div class="form-group">
+		                  <label for="cantidad">Asistentes</label>
+		                  <select id="cantidad" name="cantidad" class="form-control">
+		                  	<option value="1">1</option>
+		                  	<option value="2">2</option>
+		                  </select>
+		                </div>
+		                <div class="form-group">
+		                	<label for="correo">E-mail</label>
+		                 	<input type="email" class="form-control" id="correo" name="correo">
+		                </div>
+		                <div class="form-group">
+		                  <label for="cantidad">Mensaje</label>
+		                  <textarea id="mensaje" class="form-control" name="mensaje" rows="5"></textarea>
+		                  <small><span id="remaining-chars">250</span> carácteres restantes</small>
+		                </div>
+		                <div class="form-group text-center">
+		                	<button type="submit" class="btn btn-primary">Guardar</button>
+		                </div>
+	                </div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<footer>
+		
+	</footer>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.cycle2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-switch.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
