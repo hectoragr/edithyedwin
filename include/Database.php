@@ -1,12 +1,12 @@
 <?php
 
 $databases = array(
-	'default' => 'LOCAL',
+	'default' => 'REMOTA',
 	
 	//Se establecen los parametros de conexión de la BBDD developmetn
-	'DESARROLLO' => array(
+	'REMOTA' => array(
 		'dbms' => "mysql",
-		'host' => 'localhost',
+		'host' => 'mysql.1freehosting.com',
 		'name' => 'u148390976_eye',
 		'user' => 'u148390976_eye',
 		'password' => 'gohe1106',

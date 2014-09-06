@@ -13,7 +13,7 @@ class Libs extends Database
 		$json['msg'] = "Se ha enviado el correo con éxito";
 
 		$emails = explode(", ", $to);
-		@mail($to, "Contacto | Centro de Obesidad y Diabetes", $mensaje);
+		
 		foreach ($emails as $email) {
 			if (!isset($to) || !$this->isEmail($email)) {
 				$json['error'] = true;
@@ -22,7 +22,7 @@ class Libs extends Database
 		}
 
 		if ($json['error'] == false) {
-			mail($to, "Boda Edith y Edwin | Asistencia", utf8_decode($mensaje));
+			@mail($to, "Boda Edith y Edwin | Asistencia", utf8_decode($mensaje));
 		}
 
 		if ($jsonc) {
@@ -81,18 +81,14 @@ class Libs extends Database
 				$json['error'] = true;
 				$json['msg'] = "Tu respuesta no ha podido ser guardada. Intenta más tarde.";
 			}else {
-				@mail("hector.agr@gmail", "Contacto | Centro de Obesidad y Diabetes", "wat");
 				if ($_POST['confirmar'] == 'on') {
-					$cmsg = "Hola ".$_POST['nombre'].", \n Hemos confirmado tu asistencia a nuestra boda. 
-							Confirmaste la asistencia de ".$_POST['cantidad']." invitados.\n
-							Si deseas corregir esta información, regresa a la página de confirmar y ajusta el número
-							con el mismo folio que ya tienes.\nTe esperamos el día 18 de Octubre del 2014.\n\n Saludos de Edith y Edwin.";
+					$cmsg = "Hola ".$_POST['nombre'].", \n Hemos confirmado tu asistencia a nuestra boda. Confirmaste la asistencia de ".$_POST['cantidad']." invitados.\n Si deseas corregir esta información, regresa a la página de confirmar y ajusta el número con el mismo folio que ya tienes.\nTe esperamos el día 18 de Octubre del 2014.\n\n Saludos de Edith y Edwin.";
 					$this->sendMail($_POST['correo'], $cmsg);
 
 					$cmsg = "Un invitado ha confirmado su asistencia con la siguiente información: \n";
 					foreach ($_POST as $key => $value) {
 						if ( in_array($key, array('correo', 'nombre', 'cantidad', 'mensaje')) ) {
-							$cmsg .= "\t -".strtoupper($key)." : ".$value."\n";
+							$cmsg .= "\t -".ucfirst($key)." : ".$value."\n";
 						}
 					}
 					$this->sendMail("hector.agr@gmail.com, mr.tupac@gmail.com", $cmsg);
@@ -100,7 +96,7 @@ class Libs extends Database
 					$cmsg = "Un invitado ha rechazado su asistencia con la siguiente información: \n";
 					foreach ($_POST as $key => $value) {
 						if (in_array($key, array('correo', 'nombre', 'cantidad', 'mensaje')) && !empty($value)) {
-							$cmsg .= "\t -".strtoupper($key)." : ". $value."\n";
+							$cmsg .= "\t -".ucfirst($key)." : ". $value."\n";
 						}
 					}
 					$this->sendMail("hector.agr@gmail.com, mr.tupac@gmail.com", $cmsg);

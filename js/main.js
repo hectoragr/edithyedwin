@@ -28,13 +28,7 @@ $(document).ready(function () {
 	});
 
 	$(document).on('keyup', '#mensaje', function (e) {
-		var leftchars = 250 - $(this).val().length;
-		$('#remaining-chars').text(leftchars);
-		if (leftchars < 30) {
-			$('#remaining-chars').addClass("alert-danger");
-		}else {
-			$('#remaining-chars').removeClass("alert-danger");
-		}
+		fillMensaje();
 	});
 
 	$('.form-asistencia').submit(function(e) {
@@ -82,11 +76,19 @@ function searchFolio (input) {
 				fillFields(result.data);
 			}
 		}, complete: function () {
-
+			fillMensaje();
 		}
 	});
 }
-
+function fillMensaje() {
+	var leftchars = 250 - $('#mensaje').val().length;
+	$('#remaining-chars').text(leftchars);
+	if (leftchars < 30) {
+		$('#remaining-chars').addClass("alert-danger");
+	}else {
+		$('#remaining-chars').removeClass("alert-danger");
+	}
+}
 function fillFields (data) {
 	$('#nombre').val(data.nombre);
 	$('#cantidad-sel').html(data.cantidad);
