@@ -56,33 +56,25 @@
 	<div class="container-fluid clearfix">
 		<div class="p0i row odd-b">
 			<div class="col-md-6 col-md-offset-3 main-text">
-				<p class="welcome-text">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				<p class="welcome-text text-center">
+					"Amor es enamorarse de la misma persona todos los días"
 				</p>
 			</div>	
 		</div>
 		<div class="row even-b">
 			<div class="col-md-6 col-md-offset-3 main-form">
-				<form id="asistencia" action="include/asistencia" method="POST" class="form-asistencia">
+				<form id="asistencia" action="confirmar" method="POST" class="form-asistencia">
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat.
+						Confirma tu asistencia utilizando el folio de tu invitación:
 					</p>
 					<div class="form-group">
 	                  <label for="folio">Folio</label>
-	                  <input type="text" class="form-control" id="folio" name="folio">
+	                  <input type="text" class="form-control" id="folio" name="folio" action="buscarFolio" maxlength="5">
 	                  <div class="row text-center visible-xs visible-sm">
 	                  	<button id="buscar" class="btn btn-primary">Buscar</button>
 	                  </div>
 	                </div>
-	                <div class="info-asistente">
+	                <div class="info-asistente hidden">
 		                <div class="form-group">
 		                  <label for="nombre">Familia</label>
 		                  <input type="text" class="form-control" id="nombre" name="nombre">
@@ -93,12 +85,14 @@
 		                  	<input id="confirmar" type="checkbox" name="confirmar" checked>
 		                  </div>
 		                </div>
-		                <div class="form-group">
+		                <div class="form-group cantidad-group">
 		                  <label for="cantidad">Asistentes</label>
+		                  <span id="cantidad-sel">
 		                  <select id="cantidad" name="cantidad" class="form-control">
 		                  	<option value="1">1</option>
 		                  	<option value="2">2</option>
 		                  </select>
+		                  </span>
 		                </div>
 		                <div class="form-group">
 		                	<label for="correo">E-mail</label>
@@ -106,11 +100,11 @@
 		                </div>
 		                <div class="form-group">
 		                  <label for="cantidad">Mensaje</label>
-		                  <textarea id="mensaje" class="form-control" name="mensaje" rows="5"></textarea>
+		                  <textarea id="mensaje" class="form-control" name="mensaje" rows="5" maxlength="250"></textarea>
 		                  <small><span id="remaining-chars">250</span> carácteres restantes</small>
 		                </div>
 		                <div class="form-group text-center">
-		                	<button type="submit" class="btn btn-primary">Guardar</button>
+		                	<button type="submit" class="btn btn-primary" id="btnConfirmar">Guardar</button>
 		                </div>
 	                </div>
 				</form>

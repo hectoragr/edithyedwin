@@ -6,3 +6,5 @@ RewriteEngine on
 RewriteRule ^inicio$ index.html
 RewriteRule ^asistencia$ asistencia.html
 RewriteRule ^nosotros$ nosotros.html
+RewriteRule ^buscarFolio$ include/Libs.php?accion=buscarFolio
+RewriteRule ^confirmar$ include/Libs.php?accion=confirmar
