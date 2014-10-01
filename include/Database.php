@@ -1,7 +1,7 @@
 <?php
 
 $databases = array(
-	'default' => 'REMOTA',
+	'default' => 'LOCAL',
 	
 	//Se establecen los parametros de conexión de la BBDD developmetn
 	'REMOTA' => array(
