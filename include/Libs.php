@@ -82,7 +82,7 @@ class Libs extends Database
 				$json['msg'] = "Tu respuesta no ha podido ser guardada. Intenta más tarde.";
 			}else {
 				if ($_POST['confirmar'] == 'on') {
-					$cmsg = "Hola ".$_POST['nombre'].", \n Hemos confirmado tu asistencia a nuestra boda. Confirmaste la asistencia de ".$_POST['cantidad']." invitados.\n Si deseas corregir esta información, regresa a la página de confirmar y ajusta el número con el mismo folio que ya tienes.\nTe esperamos el día 18 de Octubre del 2014 en Ivory Eventos, localizado en Av. Lázaro Cárdenas 551 en Monterrey, Nuevo León.\n\n Saludos de Edith y Edwin.";
+					$cmsg = "Hola ".$_POST['nombre'].", \n Hemos confirmado tu asistencia a nuestra boda. Confirmaste la asistencia de ".$_POST['cantidad']." invitados.\n Si deseas corregir esta información, regresa a la página de confirmar y ajusta el número con el mismo folio que ya tienes.\nTe esperamos el día 18 de Octubre del 2014.\n\n Saludos de Edith y Edwin.";
 					$this->sendMail($_POST['correo'], $cmsg);
 
 					$cmsg = "Un invitado ha confirmado su asistencia con la siguiente información: \n";
@@ -91,7 +91,7 @@ class Libs extends Database
 							$cmsg .= "\t -".ucfirst($key)." : ".$value."\n";
 						}
 					}
-					
+					$this->sendMail("hector.agr@gmail.com, mr.tupac@gmail.com", $cmsg);
 				}else {
 					$cmsg = "Un invitado ha rechazado su asistencia con la siguiente información: \n";
 					foreach ($_POST as $key => $value) {
@@ -99,8 +99,9 @@ class Libs extends Database
 							$cmsg .= "\t -".ucfirst($key)." : ". $value."\n";
 						}
 					}
+					$this->sendMail("hector.agr@gmail.com, mr.tupac@gmail.com", $cmsg);
 				}
-				$this->sendMail("hector.agr@gmail.com, mr.tupac@gmail.com", $cmsg);
+
 			}
 		}
 
