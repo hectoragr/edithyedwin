@@ -115,7 +115,7 @@ class Libs extends Database
 			$json['error'] = true;
 			$json['msg'] = "Folio no válido";
 		}else {
-			$sql = "SELECT * FROM invitados WHERE folio = :folio LIMIT 1";
+			$sql = "SELECT * FROM invitados WHERE folio LIKE %:folio% LIMIT 1";
 			$consulta = $this->_conexion->prepare($sql);
 			$consulta->bindParam(":folio", $_POST['folio']);
 			$consulta->execute();
